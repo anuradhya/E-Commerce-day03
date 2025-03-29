@@ -1,82 +1,34 @@
-# Spring Boot REST API
+# Spring Boot REST API  
 
-## Project Overview
-This is a simple Spring Boot REST API for managing student information, providing endpoints to retrieve student details based on various criteria.
+## Overview  
+A simple Spring Boot REST API for managing student information with various retrieval endpoints.    
 
-## Project Structure
-- `AppController.java`: Main REST controller with endpoints for student operations
-- `Student.java`: Model class representing student attributes
+## Endpoints  
 
-## Prerequisites
-- Java 8 or higher
-- Spring Boot
-- Maven or Gradle
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/app/msg` | GET | Returns a welcome message |
+| `/app/age/{age}` | GET | Returns a message with the provided age |
+| `/app/student` | GET | Retrieves a single student |
+| `/app/students` | GET | Retrieves all students |
+| `/app/students/{regNo}` | GET | Retrieves a student by registration number |
+| `/app/ages` | GET | Retrieves students aged 20-23 |
+| `/app/students/gpa` | GET | Retrieves students sorted by GPA |
 
-## Dependencies
-- Spring Web
-- Java Utilities
+## Student Model  
+- `regNo` (String) – Registration Number  
+- `name` (String) – Student Name  
+- `age` (Integer) – Student Age  
+- `course` (String) – Course Name  
+- `gpa` (Double) – Grade Point Average  
 
-## Endpoints
+## Running the Application  
+1. Clone the repository  
+2. Build using Maven/Gradle  
+3. Run the Spring Boot application  
+4. Access endpoints via `http://localhost:8080/app/...`  
 
-### 1. Welcome Message
-- **URL:** `/app/msg`
-- **Method:** GET
-- **Response:** "Hello Spring Boot!"
-
-### 2. Age Endpoint
-- **URL:** `/app/age/{age}`
-- **Method:** GET
-- **Description:** Returns a message with the provided age
-- **Example:** `/app/age/23` returns "My age is 23"
-
-      
-### 3. Get Single Student
-- **URL:** `/app/student`
-- **Method:** GET
-- **Description:** Returns the first predefined student (s1)
-
-### 4. Get All Students
-- **URL:** `/app/students`
-- **Method:** GET
-- **Description:** Returns a list of all predefined students
-
-### 5. Get Student by Registration Number
-- **URL:** `/app/students/{regNo}`
-- **Method:** GET
-- **Description:** Returns a specific student by their registration number
-- **Example:** `/app/students/2020ICT47`
-
-### 6. Get Students by Age Range
-- **URL:** `/app/ages`
-- **Method:** GET
-- **Description:** Returns students between ages 20-23
-
-### 7. Get Students Sorted by GPA
-- **URL:** `/app/students/gpa`
-- **Method:** GET
-- **Description:** Returns students sorted by GPA in ascending order
-
-## Student Model
-The `Student` class has the following attributes:
-- `regNo`: Registration Number (String)
-- `name`: Student Name (String)
-- `age`: Student Age (Integer)
-- `course`: Student's Course (String)
-- `gpa`: Student's Grade Point Average (Double)
-
-
-## Running the Application
-1. Ensure you have Java and Spring Boot installed
-2. Clone the repository
-3. Build the project using Maven or Gradle
-4. Run the Spring Boot application
-5. Access endpoints via `http://localhost:8080/app/...`
-
-## Potential Improvements
-- Add error handling
-- Implement database persistence
-- Add POST, PUT, and DELETE endpoints
-- Implement more advanced filtering and sorting
-
-## Authors
-- Maleesha Rathnayake(maleesharathnayake840@gmial.com)
+## Future Enhancements  
+- Add database integration  
+- Implement error handling  
+- Support POST, PUT, and DELETE requests  
